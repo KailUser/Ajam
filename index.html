@@ -1,10 +1,20 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script>
+      setInterval(function() {
+        var box = document.querySelector("a-box");
+        if (box) {
+          var rotation = box.getAttribute("rotation");
+          rotation.y += 1;
+          box.setAttribute("rotation", rotation);
+        }
+      }, 1000);
+    </script>
   </head>
   <body>
     <a-scene>
-        <a-box  color="#f40afc" text="Hello, World!"></a-box>
+        <a-box  color="#f40afc" text="Hello, World!" position="undefined"></a-box>
         <a-camera></a-camera>
     </a-scene>
   </body>
